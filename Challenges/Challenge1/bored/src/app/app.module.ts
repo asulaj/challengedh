@@ -6,7 +6,8 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { GenerateactivityComponent } from './activity/generateactivity/generateactivity.component';
 import { FavouriteactivityComponent } from './activity/favouriteactivity/favouriteactivity.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { AveragePipe } from './pipes/average.pipe'
 
 
 
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http'
     HomeComponent,
     NavbarComponent,
     GenerateactivityComponent,
-    FavouriteactivityComponent
+    FavouriteactivityComponent,
+    AveragePipe
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,7 @@ import { HttpClientModule } from '@angular/common/http'
 
   ],
   providers: [
-
+    AveragePipe
   ],
   bootstrap: [AppComponent]
 })

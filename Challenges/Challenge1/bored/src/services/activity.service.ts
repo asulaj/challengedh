@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Activity } from 'src/app/models/Activity';
 
-import { ApiService } from '../api.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,15 +14,20 @@ export class ActivityService {
   public activityItemFavorites: Activity[] = [];
   public activityListFavorite = new BehaviorSubject<Activity[]>([]);
 
+
   /*SetLocalStorage Array */
   // public localStorageFavouriteListActivities: Activity[] = [];
+
+
+
+
   constructor() { }
 
   getFavouriteActivities(): any {
     return this.activityListFavorite.asObservable();
   }
 
-  // Add to favourie Activities
+  // Add to favourite activities
   addToFavouriteActvity(item: any): void {
 
     this.activityItemFavorites.push({ ...item })

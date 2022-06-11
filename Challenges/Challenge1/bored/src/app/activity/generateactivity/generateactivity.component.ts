@@ -42,13 +42,12 @@ export class GenerateactivityComponent implements OnInit {
 
       } else {
         this.activityItemGenerated.pop();
-
+        this.toggleGenerated--;
       }
 
     })
 
     // this.activityItemGenerated.push({ ...this.testObj });
-
 
 
   }

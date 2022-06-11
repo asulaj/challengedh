@@ -37,7 +37,7 @@ export class ActivityService {
     // Set localStorage
     localStorage.setItem('favouriteActivities', JSON.stringify(this.activityItemFavorites))
 
-    //
+    // Updates the list favorite 
     this.activityListFavorite.next(this.activityItemFavorites)
   }
 

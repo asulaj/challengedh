@@ -1,3 +1,4 @@
+import { RequestActivityService } from './../../request-activity.service';
 import { Component, OnInit } from '@angular/core';
 
 import { Activity } from 'src/app/models/Activity';
@@ -10,6 +11,13 @@ import { ApiService } from 'src/services/api.service';
   styleUrls: ['./generateactivity.component.css']
 })
 export class GenerateactivityComponent implements OnInit {
+
+  // constructor(private api: RequestActivityService) { }
+
+  // ngOnInit(): void {
+  //  this.api.getActivity().subscribe((data) => {
+  //    console.log(data)
+ //   })
 
 
   public activityItemGenerated: Activity[] = [];
@@ -26,9 +34,12 @@ export class GenerateactivityComponent implements OnInit {
   //   "accessibility": 0.1
   // }
 
-  constructor(private api: ApiService, private activityservice: ActivityService) { }
+  constructor(private api: ApiService, private activityservice: ActivityService, private prova: RequestActivityService) { }
 
   ngOnInit(): void {
+   // this.prova.getActivity().subscribe(data => {
+  //    console.log(data);
+  //  })
 
   }
 

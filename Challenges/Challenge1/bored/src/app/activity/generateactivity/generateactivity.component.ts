@@ -12,7 +12,7 @@ import { ApiService } from '../../api.service';
 })
 export class GenerateactivityComponent implements OnInit {
 
-
+  public controlBtn: boolean = false;
 
   public activityItemGenerated: Activity[] = [];
 
@@ -34,6 +34,6 @@ export class GenerateactivityComponent implements OnInit {
 
   addToFavourite(obj: any): void {
     this.activityservice.addToFavouriteActvity(obj);
-
+    this.controlBtn = !this.controlBtn;
   }
 }

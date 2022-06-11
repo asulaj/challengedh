@@ -15,7 +15,8 @@ export class ActivityService {
   public activityItemFavorites: Activity[] = [];
   public activityListFavorite = new BehaviorSubject<Activity[]>([]);
 
-
+  /*SetLocalStorage Array */
+  // public localStorageFavouriteListActivities: Activity[] = [];
   constructor() { }
 
   getFavouriteActivities(): any {
@@ -24,7 +25,13 @@ export class ActivityService {
 
   // Add to favourie Activities
   addToFavouriteActvity(item: any): void {
+
     this.activityItemFavorites.push({ ...item })
+
+    // Set localStorage
+    localStorage.setItem('favouriteActivities', JSON.stringify(this.activityItemFavorites))
+
+    //
     this.activityListFavorite.next(this.activityItemFavorites)
   }
 

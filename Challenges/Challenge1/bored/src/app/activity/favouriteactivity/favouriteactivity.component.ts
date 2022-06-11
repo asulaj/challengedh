@@ -13,7 +13,8 @@ export class FavouriteactivityComponent implements OnInit {
 
   public favouriteActvities: Activity[] = [];
 
-  public favouriteActvitiesSlice: Activity[] = [];
+
+
   constructor(private activityService: ActivityService) { }
 
   ngOnInit(): void {
@@ -21,15 +22,15 @@ export class FavouriteactivityComponent implements OnInit {
       this.favouriteActvities = data;
     })
 
-  }
+    this.favouriteActvities = JSON.parse(localStorage.getItem('favouriteActivities') || '{}')
 
+  }
 
   //Delete favourite activity
   deleteActivity(obj: Activity): void {
     this.activityService.removeFavouriteActive(obj)
+
   }
-
-
 
 }
 

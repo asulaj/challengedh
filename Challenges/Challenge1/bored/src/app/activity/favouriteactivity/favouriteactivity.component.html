@@ -50,7 +50,10 @@
                         <p class="txt txt-prezzo"><span>{{activity.price}}</span></p>
                     </div>
                      <div class="td td-link">
-                        <p class="txt txt-link"><span>{{activity.link}}</span></p>
+                        <p *ngIf="activity.link else linkVoid"  class="txt txt-link"><span>{{activity.link}}</span></p>
+                        <ng-template #linkVoid>
+                           <p class="txt txt-link"><span>Nessun link correlato</span></p>
+                        </ng-template>
                     </div>
                       <div class="td td-delete">
                         <div class="btn-dlt-container">

@@ -16,9 +16,6 @@ export class GenerateactivityComponent implements OnInit {
 
   public activityItemGenerated: Activity[] = [];
 
-  public toggleGenerated: number = 0;
-
-
 
   constructor(private api: ApiService, private activityservice: ActivityService, private prova: RequestActivityService) { }
 
@@ -28,18 +25,15 @@ export class GenerateactivityComponent implements OnInit {
 
 
   getRandomActivity(): void {
-    this.api.getRandomActivity().subscribe((data: any) => {
-      console.log(data)
+    this.api.getRandomActivity().subscribe(
+      (data: Activity) => { this.activityItemGenerated[0] = data; });
+    (error: Error) => { alert('Fatal Error') }
 
-      this.activityItemGenerated[0] = data;
-      this.toggleGenerated++
-
-    })
   }
 
 
   addToFavourite(obj: any): void {
-    this.activityservice.addToFavouriteActvity(obj)
+    this.activityservice.addToFavouriteActvity(obj);
 
   }
 }

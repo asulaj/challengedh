@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Activity } from 'src/app/models/Activity';
 
-import { ApiService } from '../api.service';
+import { ApiService } from '../app/api.service';
 
 @Injectable({
   providedIn: 'root'

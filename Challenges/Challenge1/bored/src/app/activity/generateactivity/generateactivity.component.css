@@ -5,8 +5,8 @@
 .container-generate-activity{
     padding: 1rem;
     border: 1px solid rgb(231, 227, 235);
-    min-width: 1000px;
-    max-width: 1000px;
+    min-width: 700px;
+    max-width: 900px;
     margin: 0 auto;
     height: 100%;
 }

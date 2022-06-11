@@ -6,6 +6,5 @@
     max-width: 2500px;
     margin: 0 auto;
     flex-wrap: wrap;
-    row-gap: 1rem;
-    
+    row-gap: 1rem;  
 }

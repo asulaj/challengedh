@@ -6,6 +6,9 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { GenerateactivityComponent } from './activity/generateactivity/generateactivity.component';
 import { FavouriteactivityComponent } from './activity/favouriteactivity/favouriteactivity.component';
+import { HttpClientModule } from '@angular/common/http'
+
+
 
 @NgModule({
   declarations: [
@@ -16,9 +19,13 @@ import { FavouriteactivityComponent } from './activity/favouriteactivity/favouri
     FavouriteactivityComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
+
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

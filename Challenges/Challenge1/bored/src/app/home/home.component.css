@@ -1,0 +1,11 @@
+.container-generate-favourite-activity{
+    display: flex;
+    justify-content: center;
+    column-gap: 1rem;
+    padding: 1rem;
+    max-width: 2500px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+    
+}

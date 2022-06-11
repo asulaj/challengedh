@@ -1,1 +1,64 @@
-<p>favouriteactivity works!</p>
+<div class="container-table">
+        <div class="table">
+            <!-- T-HEADER STARTS -->
+            <div class="grid-container grid-header">
+                    <div class="th th-attività">
+                        <h4 class="th-txt txt-attività"><span>Attività</span></h4>
+                    </div>
+                    <div class="th th-Difficoltà">
+                        <h4 class="th-txt txt-attività"><span>Difficoltà</span></h4>
+                    </div>
+                    <div class="th th-attività">
+                        <h4 class="th-txt txt-attività"><span>Tipo</span></h4>
+                    </div>
+                    <div class="th th-attività">
+                        <h4 class="th-txt txt-attività"><span>Partecipanti</span></h4>
+                    </div>
+                    <div class="th th-attività">
+                        <h4 class="th-txt txt-attività"><span>Prezzo</span></h4>
+                    </div>
+                     <div class="th th-attività">
+                        <h4 class="th-txt txt-attività"><span>Link</span></h4>
+                    </div>
+                      <div class="th th-attività">
+                        <h4 class="th-txt txt-delete"><span>Delete</span></h4>
+                    </div>
+            </div>
+            <!-- T-HEADER ENDS -->
+            <!-- T-BODY STARTS -->
+            <ng-container *ngIf="false">
+                <div class="container-txt-no-activity">
+                    <p class="txt-no-activity">Nessuna attività preferita.</p>
+                </div>
+            </ng-container>
+            
+            <ng-container *ngIf="true">
+              <div class="grid-container grid-body" *ngFor="let activity of favoriteActivityList">
+                    <div class="td  td-attività">
+                            <p class="txt txt-attività"><span>Learn how to fold a paper crane</span></p>
+                    </div>
+                    <div class="td td-Difficoltà">
+                        <p class="txt txt-attività"><span>0.05</span></p>
+                    </div>
+                    <div class="td td-attività">
+                        <p class="txt txt-attività"><span>education</span></p>
+                    </div>
+                    <div class="td td-attività">
+                        <p class="txt txt-attività"><span>1</span></p>
+                    </div>
+                    <div class="td td-attività">
+                        <p class="txt txt-attività"><span>0.5</span></p>
+                    </div>
+                     <div class="td td-attività">
+                        <p class="txt txt-attività"><span>0</span></p>
+                    </div>
+                      <div class="td td-delete">
+                        <div class="btn-dlt-container">
+                            <button class="btn btn-danger">Delete</button>
+                        </div>
+                    </div>
+              </div>
+            </ng-container>
+            <!-- T-BODY ENDS -->
+        </div>
+</div>

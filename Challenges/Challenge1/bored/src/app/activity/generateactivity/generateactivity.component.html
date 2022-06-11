@@ -1,35 +1,38 @@
 <div class="container-generate-activity">
    
     <div class="container-btn-generate-activity">
-        <button class="btn btn-primary" type="button">Genera Attività</button>
+        <button class="btn btn-primary" type="button" (click)="getRandomActivity()">Genera Attività</button>
     </div>
-    <div class="container-table-activity" *ngIf="false">
-        <div class="table">
+    <div class="container-table-activity" *ngIf="activityItemGenerated.length > 0">
+        <div class="table" *ngFor="let item of activityItemGenerated">
                 <div class="container-title-table">
-                    <h1>Learn Express.js</h1>
+                    <h1>{{item.activity}}</h1>
                 </div>
                 <div class="container-row-data">
                     <p class="title-of-value">Difficoltà:</p>
-                    <p class="txt-value">0.25</p>
+                    <p class="txt-value">{{item.accessibility | average}}</p>
                 </div>
                  <div class="container-row-data">
                     <p class="title-of-value">Tipo:</p>
-                    <p class="txt-value">education</p>
+                    <p class="txt-value">{{item.type}}</p>
                 </div>
                 <div class="container-row-data">
                     <p class="title-of-value">Partecipanti:</p>
-                    <p class="txt-value">1</p>
+                    <p class="txt-value">{{item.participants}}</p>
                 </div>
                  <div class="container-row-data">
                     <p class="title-of-value">Prezzo:</p>
-                    <p class="txt-value">0</p>
+                    <p class="txt-value">{{item.price}}</p>
                 </div>
                  <div class="container-row-data">
                     <p class="title-of-value">Link:</p>
-                    <p class="txt-value">https://expressjs.com</p>
+                    <p class="txt-value" *ngIf="item.link === ''; else  linkVoid ">{{item.link}}</p>
+                    <ng-template #linkVoid>
+                       <p class="txt-value">Nessun link correlato</p>
+                    </ng-template>
                 </div>
                 <div class="container-btn-add-to-favourite">
-                        <button class="btn btn-warning" type="button">Salva Preferito</button>
+                        <button class="btn btn-warning" type="button" (click)="addToFavourite(activityItemGenerated[0])">Salva Preferito</button>
                 </div>
         </div>
     </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Activity } from 'src/app/models/Activity';
+import { ActivityService } from 'src/services/activity.service';
 
 
 @Component({
@@ -9,10 +11,20 @@ import { Component, OnInit } from '@angular/core';
 export class FavouriteactivityComponent implements OnInit {
 
 
-  public favoriteActivityList: any = [1, 2, 3, 4, 5, 5, 6, 7, 7, 8]
-  constructor() { }
+  public favouriteActvities: Activity[] = [];
+  constructor(private activityService: ActivityService) { }
 
   ngOnInit(): void {
+    this.activityService.getFavouriteActivities().subscribe((data: Activity[]) => {
+      this.favouriteActvities = data;
+    })
   }
+
+
+  //Delete favourite activity
+  deleteActivity(obj: Activity): void {
+    this.activityService.removeFavouriteActive(obj)
+  }
+
 
 }

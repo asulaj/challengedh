@@ -26,13 +26,13 @@
             </div>
             <!-- T-HEADER ENDS -->
             <!-- T-BODY STARTS -->
-            <ng-container *ngIf="false">
+            <ng-container *ngIf="true">
                 <div class="container-txt-no-activity">
                     <p class="txt-no-activity">Nessuna attività preferita.</p>
                 </div>
             </ng-container>
             
-            <ng-container *ngIf="true">
+            <ng-container *ngIf="false">
               <div class="grid-container grid-body" *ngFor="let activity of favoriteActivityList">
                     <div class="td  td-attività">
                             <p class="txt txt-attività"><span>Learn how to fold a paper crane</span></p>
@@ -54,7 +54,7 @@
                     </div>
                       <div class="td td-delete">
                         <div class="btn-dlt-container">
-                            <button class="btn btn-danger">Delete</button>
+                            <button class="btn btn-danger" type="button">Delete</button>
                         </div>
                     </div>
               </div>

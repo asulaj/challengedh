@@ -1,11 +1,9 @@
 * {
     margin: 0;
 }
-.container-table{
-    padding: 1rem;
-}
+
 .table{
-    max-width: 1300px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 1rem;
     border: 1px solid rgb(231, 227, 235);
@@ -19,7 +17,7 @@
 
  /* TH-HEADER STARTS*/
  .grid-header{
- border-bottom: 4px solid black;
+ border-bottom: 3px solid black;
  }
 
  .th-txt{

@@ -7,17 +7,26 @@
     margin: 0 auto;
     padding: 1rem;
     border: 1px solid rgb(231, 227, 235);
+    max-height: 500px;
+    overflow-y: scroll;
+    position: relative;
 }
 
 .grid-container{
     display: grid;
     width: 100%;
      grid-template-columns: 1.5fr repeat(6, 1fr)
+     
  }
 
  /* TH-HEADER STARTS*/
  .grid-header{
  border-bottom: 3px solid black;
+ position: sticky;
+ top: -18px;
+ opacity: 1;
+ z-index: 44;
+ background-color: rgb(255, 255, 255);
  }
 
  .th-txt{
@@ -53,3 +62,4 @@
     display: flex;
     align-items: center;
 }
+

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Activity } from 'src/app/models/Activity';
 
-import { ApiService } from './api.service';
+import { ApiService } from '../api.service';
 
 @Injectable({
   providedIn: 'root'
@@ -33,5 +33,7 @@ export class ActivityService {
     let index = this.activityItemFavorites.findIndex(item => item.key === obj.key)
     this.activityItemFavorites.splice(index, 1)
   }
+
+
 
 }

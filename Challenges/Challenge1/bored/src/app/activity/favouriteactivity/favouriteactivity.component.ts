@@ -12,12 +12,15 @@ export class FavouriteactivityComponent implements OnInit {
 
 
   public favouriteActvities: Activity[] = [];
+
+  public favouriteActvitiesSlice: Activity[] = [];
   constructor(private activityService: ActivityService) { }
 
   ngOnInit(): void {
     this.activityService.getFavouriteActivities().subscribe((data: Activity[]) => {
       this.favouriteActvities = data;
     })
+
   }
 
 
@@ -27,4 +30,6 @@ export class FavouriteactivityComponent implements OnInit {
   }
 
 
+
 }
+

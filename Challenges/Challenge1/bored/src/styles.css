@@ -9,3 +9,12 @@
 
 }
 
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(71, 71, 71);
+    border-radius: 8px;
+}
+

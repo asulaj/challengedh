@@ -12,11 +12,5 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   /*Get activity api*/
-  getActivity(): Observable<Activity[]> {
-    return this.http.get<Activity[]>('https://boredapi.com/api/activity/').pipe(
-      map((res: any) => {
-        return res;
-      })
-    )
-  }
+ 
 }

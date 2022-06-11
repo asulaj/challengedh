@@ -1,4 +1,4 @@
-import { RequestActivityService } from './../../request-activity.service';
+
 import { Component, OnInit } from '@angular/core';
 
 import { Activity } from 'src/app/models/Activity';
@@ -17,7 +17,7 @@ export class GenerateactivityComponent implements OnInit {
   public activityItemGenerated: Activity[] = [];
 
 
-  constructor(private api: ApiService, private activityservice: ActivityService, private prova: RequestActivityService) { }
+  constructor(private api: ApiService, private activityservice: ActivityService) { }
 
   ngOnInit(): void {
 

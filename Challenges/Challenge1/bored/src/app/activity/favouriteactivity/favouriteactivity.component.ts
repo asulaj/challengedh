@@ -22,7 +22,7 @@ export class FavouriteactivityComponent implements OnInit {
       this.favouriteActvities = data;
     })
 
-    this.favouriteActvities = JSON.parse(localStorage.getItem('favouriteActivities') || '{}')
+    
 
   }
 

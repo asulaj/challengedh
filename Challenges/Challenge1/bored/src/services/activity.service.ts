@@ -31,11 +31,20 @@ export class ActivityService {
 
   // Add to favourite activities
   addToFavouriteActvity(item: any): void {
-    
-    this.activityItemFavorites.push({ ...item })
+
+
 
     // Set localStorage
-    localStorage.setItem('favouriteActivities', JSON.stringify(this.activityItemFavorites))
+    if (JSON.parse(localStorage.getItem('favouriteActivities') || '{}')) {
+      let tmpArray = JSON.parse(localStorage.getItem('favouriteActivities') || '{}');
+      tmpArray.push(item)
+      this.activityItemFavorites.push(...tmpArray)
+      localStorage.setItem('favouriteActivities', JSON.stringify(tmpArray));
+    } else {
+      this.activityItemFavorites.push({ ...item })
+      localStorage.setItem('favouriteActivities', JSON.stringify(this.activityItemFavorites))
+
+    }
 
     // Updates the list favorite 
     this.activityListFavorite.next(this.activityItemFavorites)
@@ -43,7 +52,7 @@ export class ActivityService {
 
   // Remove one favourite activity
   removeFavouriteActive(obj: any): void {
-    
+
     let index = this.activityItemFavorites.findIndex(item => item.key === obj.key);
     const manageLocal = JSON.parse(localStorage.getItem('favouriteActivities') || '{}');
     manageLocal.splice(index, 1); // Removes also from local storage so we are on same pace
@@ -51,7 +60,7 @@ export class ActivityService {
     this.activityListFavorite.next(manageLocal); // Sends new values updated again
     this.activityItemFavorites.splice(index, 1);
 
-    
+
   }
 
 

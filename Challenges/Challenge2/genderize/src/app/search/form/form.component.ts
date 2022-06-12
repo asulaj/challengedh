@@ -28,7 +28,8 @@ export class FormComponent implements OnInit {
         response.dateSearched = new Date().getTime(); // adding new property when the research has been made
 
         console.log(response)
-        this.genderService.saveSearch({ ...response }) // Save search
+        this.genderService.saveSearch({ ...response }) // Save search on angular Application
+        this.genderService.addToLocalStorage({ ...response }) // Save search on Local STorage
       }),
       (error: Error) => { console.log(error) }
   }

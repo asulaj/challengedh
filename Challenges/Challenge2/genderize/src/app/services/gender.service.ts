@@ -33,10 +33,9 @@ export class GenderService {
   }
 
   // Remove item from searchList or clean up all searclList if pareament is empty
-  removeSearch(obj: any = []): void {
-
+  removeSearch(obj: Result | undefined = undefined): void {
     console.log(obj)
-    if (obj === []) {
+    if (obj === undefined) {
       this.searchList$.next([]);
     } else {
       console.log(obj)

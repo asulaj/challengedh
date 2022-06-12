@@ -11,12 +11,12 @@ import { TableListComponent } from './search/table-list/table-list.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     FormComponent,
-
     TableListComponent
   ],
   imports: [

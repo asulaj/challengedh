@@ -36,17 +36,14 @@ export class GenderService {
   removeSearch(obj: any = []): void {
 
     console.log(obj)
-    if (obj == []) {
-      alert('true')
+    if (obj === []) {
       this.searchList$.next([]);
     } else {
       console.log(obj)
       let index = this.searchList.findIndex(item => item.count === obj.count);
       this.searchList.splice(index, 1);
     }
-
   }
-
 }
 
 

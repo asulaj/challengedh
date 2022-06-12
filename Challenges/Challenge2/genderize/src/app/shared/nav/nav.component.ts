@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GenderService } from 'src/app/services/gender.service';
 
 @Component({
   selector: 'app-nav',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  constructor(private genderService: GenderService) { }
 
   ngOnInit(): void {
+  }
+
+
+  // Clean up all Search list
+  deleteAllSearchList(): void {
+
+    this.genderService.removeSearch();
   }
 
 }

@@ -28,6 +28,7 @@ export class FormComponent implements OnInit {
         response.dateSearched = new Date; // adding new property when the research has been made
 
         console.log(response)
+        this.genderService.saveSearch({ ...response }) // Save search
       }),
       (error: Error) => { console.log(error) }
   }

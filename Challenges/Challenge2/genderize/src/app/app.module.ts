@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NavComponent } from './shared/nav/nav.component';
-import { FormComponent } from './form/form.component';
-import { ListComponent } from './list/list.component';
+
+import { FormComponent } from './search/form/form.component';
+import { HttpClientModule } from '@angular/common/http';
+import { TableListComponent } from './search/table-list/table-list.component';
+
+
+
 
 
 @NgModule({
@@ -12,10 +17,12 @@ import { ListComponent } from './list/list.component';
     AppComponent,
     NavComponent,
     FormComponent,
-    ListComponent
+    TableListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -30,13 +30,23 @@ export class ActivityService {
   // Add to favourite activities
   addToFavouriteActvity(item: any): void {
 
-
-
     // Set localStorage
+<<<<<<< HEAD
+    if (JSON.parse(localStorage.getItem('favouriteActivities') || '{}')) {
+      let tmpArray = JSON.parse(localStorage.getItem('favouriteActivities') || '{}');
+      tmpArray.push(item)
+      this.activityItemFavorites.push(...tmpArray)
+      localStorage.setItem('favouriteActivities', JSON.stringify(tmpArray));
+    } else {
+      this.activityItemFavorites.push({ ...item })
+      localStorage.setItem('favouriteActivities', JSON.stringify(this.activityItemFavorites))
+    }
+=======
    
     this.activityItemFavorites.push({ ...item })
     // Set localStorage
     localStorage.setItem('favouriteActivities', JSON.stringify(this.activityItemFavorites))
+>>>>>>> ba1458a4fe7984fd32c94f103bb3413b15a48aec
 
     //
     // Updates the list favorite 

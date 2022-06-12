@@ -7,6 +7,7 @@ import { NavComponent } from './shared/nav/nav.component';
 import { FormComponent } from './search/form/form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TableListComponent } from './search/table-list/table-list.component';
+import { TimeSearchPipe } from './pipes/time-search.pipe';
 
 
 
@@ -17,14 +18,17 @@ import { TableListComponent } from './search/table-list/table-list.component';
     AppComponent,
     NavComponent,
     FormComponent,
-    TableListComponent
+    TableListComponent,
+    TimeSearchPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    TimeSearchPipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

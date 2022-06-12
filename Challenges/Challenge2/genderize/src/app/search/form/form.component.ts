@@ -25,7 +25,7 @@ export class FormComponent implements OnInit {
     // Get Api whith searched value
     this.genderService.getApiGender(nameSearched).subscribe(
       (response: Result) => {
-        response.dateSearched = new Date; // adding new property when the research has been made
+        response.dateSearched = new Date().getTime(); // adding new property when the research has been made
 
         console.log(response)
         this.genderService.saveSearch({ ...response }) // Save search

@@ -5,5 +5,5 @@ export interface Result {
     gender: string;
     probability: number;
     count: number;
-    dateSearched: Data;
+    dateSearched: number;
 }

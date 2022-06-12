@@ -40,7 +40,7 @@
 /* TH-HEADER ENDS*/
 
 /* ELEMENT NO ACTIVIY STARTS */
-  .container-txt-no-activity{
+  .container-txt-no-search{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,5 +60,17 @@
 .td{
     display: flex;
     align-items: center;
+}
+
+/*classes for under over percentage*/
+.under40{
+  background-color: red;;
+}
+.between40-70{
+background-color: yellow;
+}
+
+.over70{
+  background-color: green;
 }
 

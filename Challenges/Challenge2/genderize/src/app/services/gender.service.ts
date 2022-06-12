@@ -36,7 +36,8 @@ export class GenderService {
   removeSearch(obj: Result | undefined = undefined): void {
     console.log(obj)
     if (obj === undefined) {
-      this.searchList$.next([]);
+      this.searchList = [];
+      this.searchList$.next(this.searchList)
     } else {
       console.log(obj)
       let index = this.searchList.findIndex(item => item.count === obj.count);

@@ -2,20 +2,20 @@
         <div class="table">
             <!-- T-HEADER STARTS -->
             <div class="grid-container grid-header">
-                    <div class="th th-attività">
-                        <h4 class="th-txt txt-attività"><span>Nome</span></h4>
+                    <div class="th th-name">
+                        <h4 class="th-txt txt-name"><span>Nome</span></h4>
                     </div>
-                    <div class="th th-difficoltà">
-                        <h4 class="th-txt txt-difficoltà"><span>Gender</span></h4>
+                    <div class="th th-gender">
+                        <h4 class="th-txt txt-gender"><span>Gender</span></h4>
                     </div>
-                    <div class="th th-tipo">
-                        <h4 class="th-txt txt-tipo"><span>Probabilità</span></h4>
+                    <div class="th th-probability">
+                        <h4 class="th-txt txt-probability"><span>Probabilità</span></h4>
                     </div>
-                    <div class="th th-partecipanti">
-                        <h4 class="th-txt txt-partecipanti"><span>Count</span></h4>
+                    <div class="th th-count">
+                        <h4 class="th-txt txt-count"><span>Count</span></h4>
                     </div>
-                    <div class="th th-prezzo">
-                        <h4 class="th-txt txt-prezzo"><span>Searched</span></h4>
+                    <div class="th th-date">
+                        <h4 class="th-txt txt-date"><span>Searched</span></h4>
                     </div>
                    
                       <div class="th th-delete">
@@ -25,27 +25,28 @@
             <!-- T-HEADER ENDS -->
             <!-- T-BODY STARTS -->
             <ng-container *ngIf="searchList.length === 0">
-                <div class="container-txt-no-activity">
-                    <p class="txt-no-activity">Nessuna Ricerca Salvata.</p>
+                <div class="container-txt-no-search">
+                    <p class="txt-no-activity">Ancora nessuna ricerca.</p>
                 </div>
             </ng-container>
            
             <ng-container *ngIf="searchList.length > 0">
-              <div class="grid-container grid-body" *ngFor="let search of searchList">
-                    <div class="td  td-attività">
-                            <p class="txt txt-attività"><span>{{search.name | titlecase}}</span></p>
+            <ng-container *ngFor="let search of searchList">
+              <div [ngClass]="{'under40': search.probability * 100 < 40, 'between40-70': search.probability * 100 > 40 || search.probability * 100 < 70, '.over70': search.probability > 70}"   class="grid-container grid-body" >
+                    <div  class="td  td-name">
+                            <p class="txt txt-name"><span>{{search.name | titlecase}}</span></p>
                     </div>
-                    <div class="td td-Difficoltà">
-                        <p class="txt txt-Difficoltà"><span>{{search.gender | titlecase}}</span></p>
+                    <div class="td td-gender">
+                        <p class="txt txt-gender"><span>{{search.gender | titlecase}}</span></p>
                     </div>
-                    <div class="td td-tipo">
-                        <p class="txt txt-tipo"><span>{{search.probability | percent}}</span></p>
+                    <div class="td td-type">
+                        <p class="txt txt-type"><span>{{search.probability | percent}}</span></p>
                     </div>
-                    <div class="td td-partecipanti">
-                        <p class="txt txt-partecipanti"><span>{{search.count}}</span></p>
+                    <div class="td td-count">
+                        <p class="txt txt-count"><span>{{search.count}}</span></p>
                     </div>
-                    <div class="td td-prezzo">
-                        <p class="txt txt-prezzo"><span>{{search.dateSearched }}</span></p>
+                    <div class="td td-date">
+                        <p class="txt txt-date"><span>{{search.dateSearched | timeSearch }}</span></p>
                     </div>
                 
                       <div class="td td-delete">
@@ -54,10 +55,9 @@
                         </div>
                     </div>
               </div>
+             </ng-container>
             </ng-container>
             <!-- T-BODY ENDS -->
-
-         
 </div>
 
            

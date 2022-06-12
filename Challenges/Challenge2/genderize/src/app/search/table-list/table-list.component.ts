@@ -24,4 +24,18 @@ export class TableListComponent implements OnInit {
 
   }
 
+  
+  colorClass(item: Result):string{
+    let returnClass: string = '';
+    if(item.probability*100<40){
+      returnClass = 'under40';
+    }else if(item.probability*100>40 && item.probability*100<70) {
+      returnClass = 'between40-70';
+    }else{
+      returnClass = 'over70';
+    }
+
+    return returnClass;
+  }
+
 }

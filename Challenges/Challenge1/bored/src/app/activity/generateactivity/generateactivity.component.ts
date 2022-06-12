@@ -17,7 +17,7 @@ export class GenerateactivityComponent implements OnInit {
   public activityItemGenerated: Activity[] = [];
 
 
-  constructor(private api: ApiService, private activityservice: ActivityService) { }
+  constructor(private api: ApiService, private activityService: ActivityService) { }
 
   ngOnInit(): void {
 
@@ -32,8 +32,8 @@ export class GenerateactivityComponent implements OnInit {
   }
 
 
-  addToFavourite(obj: any): void {
-    this.activityservice.addToFavouriteActvity(obj);
+  addToFavourite(obj: any){
+    this.activityService.addToFavouriteActvity(obj);
     this.controlBtn = !this.controlBtn;
   }
 }

@@ -4,13 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { NavComponent } from './shared/nav/nav.component';
 import { FormComponent } from './form/form.component';
+import { ListComponent } from './list/list.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    FormComponent
+    FormComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule

@@ -32,7 +32,7 @@
            
             <ng-container *ngIf="searchList.length > 0">
             <ng-container *ngFor="let search of searchList">
-              <div [ngClass]="{'under40': search.probability * 100 < 40, 'between40-70': search.probability * 100 > 40 || search.probability * 100 < 70, '.over70': search.probability > 70}"   class="grid-container grid-body" >
+              <div [ngClass]="{'under40': search.probability * 100 < 40, 'between40-70': search.probability * 100 > 40 || search.probability * 100 < 70, '.over70': search.probability *100 > 70}"   class="grid-container grid-body" >
                     <div  class="td  td-name">
                             <p class="txt txt-name"><span>{{search.name | titlecase}}</span></p>
                     </div>

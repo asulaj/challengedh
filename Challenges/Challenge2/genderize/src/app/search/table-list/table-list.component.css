@@ -42,6 +42,7 @@
 /* ELEMENT NO ACTIVIY STARTS */
   .container-txt-no-search{
     display: flex;
+   
     justify-content: center;
     align-items: center;
     padding: 1rem 0;
@@ -65,6 +66,7 @@
 /*classes for under over percentage*/
 .under40{
   background-color: red;;
+  color: white;
 }
 .between40-70{
 background-color: yellow;
@@ -72,5 +74,6 @@ background-color: yellow;
 
 .over70{
   background-color: green;
+  color: white;
 }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,  OnInit, SimpleChanges } from '@angular/core';
 import { Result } from 'src/app/models/Results';
 import { GenderService } from 'src/app/services/gender.service';
 
@@ -24,14 +24,14 @@ export class TableListComponent implements OnInit {
 
   }
 
-  
-  colorClass(item: Result):string{
+
+  colorClass(item: Result): string {
     let returnClass: string = '';
-    if(item.probability*100<40){
+    if (item.probability * 100 < 40) {
       returnClass = 'under40';
-    }else if(item.probability*100>40 && item.probability*100<70) {
+    } else if (item.probability * 100 > 40 && item.probability * 100 < 70) {
       returnClass = 'between40-70';
-    }else{
+    } else {
       returnClass = 'over70';
     }
 

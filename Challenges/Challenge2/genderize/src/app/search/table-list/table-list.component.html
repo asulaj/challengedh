@@ -32,7 +32,7 @@
            
             <ng-container *ngIf="searchList.length > 0">
             <ng-container *ngFor="let search of searchList">
-              <div [ngClass]="colorClass(search)" class="m-2" >
+              <div [ngClass]="colorClass(search)" class="m-2 d-flex justify-content-between" >
                     <div  class="td  td-name">
                             <p class="txt txt-name"><span>{{search.name | titlecase}}</span></p>
                     </div>

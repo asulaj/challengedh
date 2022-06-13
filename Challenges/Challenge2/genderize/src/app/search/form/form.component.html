@@ -2,7 +2,7 @@
   <form #f="ngForm" (ngSubmit)="submit(f)" class="d-flex flex-column justify-content-center align-items-center">
     <div class="form-group text-center">
       <input type="text" class="form-control" name="name" id="exampleInputEmail1" aria-describedby="emailHelp"
-        placeholder="Inserisci un nome..." pattern="[a-zA-Z]+" required ngModel #name="ngModel">
+        placeholder="Inserisci un nome..." pattern="[A-zA-Z]+" required ngModel #name="ngModel">
     <ng-template [ngIf]="f.invalid"><h6>Inserisci un nome valido fatto solo di caratteri dalla A alla Z.</h6></ng-template>
     </div>
     <button type="submit" [disabled]="f.invalid" class="btn btn-info mt-3">Ricerca nome</button>

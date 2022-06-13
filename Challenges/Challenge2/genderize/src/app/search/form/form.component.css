@@ -1,6 +1,15 @@
 button{ 
         width:10rem;
 }
+
+
+.border-form{
+        border: 1px solid rgba(33, 37, 41, 0.1);        
+        width: 56%;
+        padding: 20px;
+}
+
 h6{
         font-size:13px;
+
 }

@@ -28,6 +28,10 @@
  background-color: rgb(255, 255, 255);
  }
 
+ .grid-body{
+  margin-bottom: 1rem;
+ }
+
  .th-txt{
     cursor: pointer;
     font-weight: 600;

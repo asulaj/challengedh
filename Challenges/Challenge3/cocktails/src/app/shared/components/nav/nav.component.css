@@ -1,0 +1,52 @@
+.logo-tripadvisor {
+  height: 4.6rem;
+  width: 7rem;
+}
+
+nav {
+  height: 5rem;
+  background-color: rgb(255, 250, 226);
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid rgb(189, 189, 189);
+}
+
+.combo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo-title {
+    margin-left: -1rem;
+    font-family: 'Roboto Slab', serif;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 65vw;
+    
+}
+.house-svg{
+    height: 1.2rem;
+    width: 2rem;
+}
+.heart-svg{ 
+    height: 1.5rem;
+    width:1.8rem;
+}
+.welcome{
+    font-family: 'Georgia', sans-serif;
+}
+.side{
+    display: flex;
+    gap: 2rem;
+}
+

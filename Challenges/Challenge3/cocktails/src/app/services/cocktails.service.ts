@@ -54,8 +54,8 @@ export class CocktailsService {
   //Remove Item from favourite list
   removeFavouriteItem(obj: any): void {
 
-    let index = this.cocktailList.findIndex((item: any) => item.count === obj.count);
-    this.cocktailList.splice(index, 1);
+    let index = this.favouritecocktailList.findIndex((item: any) => item.count === obj.count);
+    this.favouritecocktailList.splice(index, 1);
 
   }
 

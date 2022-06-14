@@ -7,7 +7,9 @@ import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
 import { HttpClientModule } from '@angular/common/http';
 
+
 import { FavModule } from './fav/fav.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -23,7 +25,8 @@ import { FavModule } from './fav/fav.module';
     SharedModule,
     HomeModule,
     HttpClientModule,
-    FavModule
+    FavModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

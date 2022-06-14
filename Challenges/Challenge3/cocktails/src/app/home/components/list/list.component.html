@@ -2,13 +2,11 @@
 
      
 
-<input id="search"  type="text">
-
-<button (click)="getDrinks()">CLick</button>
+<app-hero (cocktailList)="allDrinks($event)"></app-hero>
 
 
 
- <div style="display: flex; gap:1rem; flex-wrap: wrap;">
+ <div style="display: flex; gap:1rem; row-gap: 6rem; flex-wrap: wrap; max-width: 1300px; margin: 2rem auto">
 
     
        

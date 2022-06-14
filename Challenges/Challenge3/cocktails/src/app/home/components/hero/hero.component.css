@@ -1,7 +1,9 @@
 .hero-container{
-    width: 100%;
+    margin-top:1rem !important;
+    width: 80%;
     display: flex;
     justify-content: center;
+    margin: 0 auto;
 }
 
 .inputButton-container{
@@ -41,4 +43,7 @@
 button{
     border: none;
     background-color: white;
+}
+input:focus{
+    outline: none;
 }

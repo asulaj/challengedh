@@ -15,9 +15,16 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Georgia', sans-serif;
+    font-size: 18px;
 }
-
+.combo-welcome{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Georgia', sans-serif;
+    font-size: 18px;
+}
 .logo{
     display: flex;
     align-items: center;
@@ -49,4 +56,11 @@ nav {
     display: flex;
     gap: 2rem;
 }
-
+.combo:hover{
+    background-color: rgb(255, 243, 181);
+    border-radius: 6rem;
+}
+a{
+    text-decoration: none;
+    color: black;
+}

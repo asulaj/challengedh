@@ -1,0 +1,25 @@
+.no-favorite-cocktail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    gap: 20px;
+}
+
+h2{
+    font-size: 30px;
+}
+
+.no-favorite-cocktail button{
+    border: none;
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.no-favorite-cocktail button:hover{
+    padding: 25px;
+    transition: 0.2s;
+}

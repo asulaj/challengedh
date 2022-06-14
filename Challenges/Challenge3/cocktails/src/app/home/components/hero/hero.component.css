@@ -1,0 +1,44 @@
+.hero-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.inputButton-container{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://b.zmtcdn.com/data/reviews_photos/bb3/202dc4af30e343774053330ed34eabb3_1578219491.jpg');
+    background-size: cover;
+    padding: 150px;
+}
+
+.input-container{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 60px;
+    padding: 10px;
+}
+
+.input-container input{
+    width: 90%;
+    border: none;
+    padding: 18px;
+}
+
+.input-container input[placeholder]{
+  font-size: 20px;
+}
+
+.input-container input::selection{
+    border: none;
+}
+
+button{
+    border: none;
+    background-color: white;
+}

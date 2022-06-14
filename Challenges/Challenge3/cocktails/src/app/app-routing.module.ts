@@ -7,7 +7,7 @@ import { ListComponent } from "./home/components/list/list.component";
 const routes: Routes = [
     {path: '', component: ListComponent},
     {path: 'hero', component: HeroComponent},
-    {path: 'favorites', component: FavouriteCocktailsComponent},
+    {path: 'favourites', component: FavouriteCocktailsComponent},
     {path: '**', redirectTo: ''}
 ]
 

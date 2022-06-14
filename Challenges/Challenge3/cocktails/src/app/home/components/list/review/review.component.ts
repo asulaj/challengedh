@@ -34,13 +34,7 @@ export class ReviewComponent implements OnInit {
 
   // OPEN MODAL BOX REVIEW
   openReview(): void {
-
-    if (this.checkItemInsideFavouriteList(this.objaddTofavouriteList)) {
-      this.cocktailService.removeFavouriteItem(this.objaddTofavouriteList)
-    } else {
-      this.showModalReview = true;
-    }
-
+    this.showModalReview = true;
   }
 
   // CLOSE MODAL BOX REVIEW
@@ -74,15 +68,6 @@ export class ReviewComponent implements OnInit {
   }
 
 
-  checkItemInsideFavouriteList(obj: any): any {
-    this.cocktailService.getFavouriteCocktails().subscribe(
-      (data: any) => {
 
-        let result = data.some((drink: any) => drink.idDrink === obj.idDrink);
-
-        return result;
-      }
-    );
-  }
 
 }

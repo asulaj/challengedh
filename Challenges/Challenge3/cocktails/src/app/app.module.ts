@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { ReviewComponent } from './home/components/list/review/review.component';
 import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { HomeModule } from './home/home.module';
     BrowserModule,
     HomeModule,
     SharedModule,
-    HomeModule
+    HomeModule,
+    HttpClientModule
+
 
   ],
   providers: [],

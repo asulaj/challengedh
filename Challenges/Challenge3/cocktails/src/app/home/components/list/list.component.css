@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-cards{
+    display: flex;
+    gap: 1rem;
+    row-gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 1300px;
+    margin: 2rem auto;
+    justify-content: center;
+}
+
+
+
+.card{
+    position: relative;
+    cursor: pointer;
+   
+}
+
+.container-img-txt{
+ transition: opacity .2s; ;
+}
+.container-img{
+    width: 300px;
+    height: 300px;
+   object-fit: cover;
+   
+}
+
+
+.heart-favourite{
+    position: absolute;
+    right: 10px;
+    z-index: 1;
+    top: 10px;
+}
+.img{
+    max-width: 100%;
+    object-fit: cover;
+    transition: transform .7s; ;
+
+}
+.container-img-txt:hover{
+    opacity: 0.9;
+}

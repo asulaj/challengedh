@@ -11,6 +11,7 @@ export class ReviewComponent implements OnInit {
 
 
 
+
   @Input() objaddTofavouriteList: any = {} // container will take obj setted by property boolean and number
   public addTo: boolean = false;
 
@@ -74,7 +75,7 @@ export class ReviewComponent implements OnInit {
     this.objaddTofavouriteList.totStars = numStars; // create and set property totStars
     this.cocktailService.addToFavouriteList(this.objaddTofavouriteList) //add to favourite list
     this.addTo = true;
-    
+
     this.closeReview(false); // close modal box review
   }
 

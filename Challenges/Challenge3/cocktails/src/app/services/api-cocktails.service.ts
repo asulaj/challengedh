@@ -10,6 +10,6 @@ export class ApiCocktailsService {
   constructor(private http: HttpClient) { }
 
   getApi(value: string): Observable<any> {
-    return this.http.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${value}`)
+    return this.http.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${value}`)
   }
 }

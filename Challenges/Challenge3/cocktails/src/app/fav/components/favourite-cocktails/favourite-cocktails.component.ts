@@ -11,5 +11,5 @@ export class FavouriteCocktailsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  
 }

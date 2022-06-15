@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { FavModule } from './fav/fav.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
 
 
 
@@ -26,7 +26,12 @@ import { FormsModule } from '@angular/forms';
     HomeModule,
     HttpClientModule,
     FavModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  exports:[
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

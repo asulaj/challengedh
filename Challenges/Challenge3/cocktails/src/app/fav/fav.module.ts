@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FavouriteCocktailsComponent } from './components/favourite-cocktails/favourite-cocktails.component';
-
+import {AppRoutingModule} from '../../app/app-routing.module'
 
 
 @NgModule({
@@ -9,7 +9,8 @@ import { FavouriteCocktailsComponent } from './components/favourite-cocktails/fa
     FavouriteCocktailsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AppRoutingModule
   ],
   exports: [
     FavouriteCocktailsComponent

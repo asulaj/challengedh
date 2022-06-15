@@ -22,6 +22,8 @@ export class ListComponent implements OnInit {
   allDrinks(event: any): void {
     this.cocktailList = [...event]
   }
-
+  goToAlfa(el: HTMLElement){
+    el.scrollIntoView({behavior: 'smooth'});
+  }
 
 }

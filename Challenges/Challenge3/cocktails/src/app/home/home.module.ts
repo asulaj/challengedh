@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HeroComponent } from './components/hero/hero.component';
 import { ListComponent } from './components/list/list.component';
 import { ReviewComponent } from './components/list/review/review.component';
+import { HelloComponent } from './components/hello/hello.component';
+import {FormsModule} from '@angular/forms';
 
 
 
@@ -12,11 +14,12 @@ import { ReviewComponent } from './components/list/review/review.component';
     HeroComponent,
     ListComponent,
     ReviewComponent,
-
-
+    HelloComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
+    
   ],
   exports: [
     HeroComponent,

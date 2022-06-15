@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { CocktailsService } from 'src/app/services/cocktails.service';
 
+
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.component.html',
@@ -8,7 +9,7 @@ import { CocktailsService } from 'src/app/services/cocktails.service';
 })
 export class HeroComponent implements OnInit {
 
-
+  @Output() goal = new EventEmitter();
   @Output() cocktailList = new EventEmitter();
 
   constructor(private cocktailsService: CocktailsService) { }

@@ -36,7 +36,6 @@ export class ReviewComponent implements OnInit {
   // OPEN MODAL BOX REVIEW
   openReview(): void {
     if (this.addTo) {
-      alert(this.addTo)
       this.cocktailService.removeFavouriteItem({ ...this.objaddTofavouriteList })
       this.objaddTofavouriteList.totStars = 0;
       this.objaddTofavouriteList.favourite = false;
@@ -75,7 +74,7 @@ export class ReviewComponent implements OnInit {
     this.objaddTofavouriteList.totStars = numStars; // create and set property totStars
     this.cocktailService.addToFavouriteList(this.objaddTofavouriteList) //add to favourite list
     this.addTo = true;
-    alert(this.addTo)
+    
     this.closeReview(false); // close modal box review
   }
 

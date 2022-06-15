@@ -1,14 +1,28 @@
       
 
 <app-hello></app-hello>
+
+
+    <app-ingredients [objIngrediens]="cocktail" [modalBoxIngre]="modalBoxIngre" (modalEmitted)="closeModal($event)"></app-ingredients>
+
 <app-hero (cocktailList)="allDrinks($event)" (goal)="goToAlfa(alfa)"></app-hero>
- <div style="display: flex; gap:1rem; row-gap: 6rem; flex-wrap: wrap; max-width: 1300px; margin: 2rem auto" #alfa>    
-       <div class="card" *ngFor="let cocktail of cocktailList" style="width: 300PX; height: 300px; border: 1px solid black;">
-         <app-review [objaddTofavouriteList]="cocktail" ></app-review>
-         <div>
-            <img  width="100%" height="100%" src="{{cocktail.strDrinkThumb}}" alt="">
-         </div>
+  <app-ingredients [objIngrediens]="cocktail" [modalBoxIngre]="modalBoxIngre" (modalEmitted)="closeModal($event)"></app-ingredients>
+ <div class="container-cards"  #alfa>    
+       <div class="card" *ngFor="let cocktail of cocktailList; let i = index">
+         <app-review  [objaddTofavouriteList]="cocktail" ></app-review>
+         <div (click)="openIngrediens(cocktail)" class="container-img-txt">
+           <div class="container-img">
+             <img class="img"  width="100%" height="100%" src="{{cocktail.strDrinkThumb}}" alt="">
+            </div>
+            <h3>{{cocktail.strDrink}}</h3>
+            <p>{{cocktail.strIBA}}</p>
+             
+          </div>
+         
        </div>
+
+      
+    
  </div>
 
-
+ 

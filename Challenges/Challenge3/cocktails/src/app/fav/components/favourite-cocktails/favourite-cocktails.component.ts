@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CocktailsService } from 'src/app/services/cocktails.service';
 
 @Component({
   selector: 'app-favourite-cocktails',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavouriteCocktailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private cocktailService: CocktailsService) { }
 
   ngOnInit(): void {
+    this.cocktailService.getFavouriteCocktails().subscribe(
+      (data: any) => { console.log(data) }
+    )
   }
-  
+
 }

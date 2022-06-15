@@ -1,0 +1,36 @@
+
+<!-- overlay modal box review start -->
+<div *ngIf="modalBoxIngre" class="overlay">
+    <div class="modal-box">
+      <div class="content-modal-box">
+        <span class="close-btn" (click)="closeIngrediens(false)" >X</span>
+        <h1>INGREDIENTI</h1>
+        <div class="container-img">
+                <img class="img-ingr" src="{{objIngrediens.strDrinkThumb}}" alt="">
+        </div>
+        <ul class="container-list-items">
+            <li class="list-item"*ngIf="objIngrediens.strIngredient1" >{{objIngrediens.strIngredient1}}</li>
+            <li class="list-item"*ngIf="objIngrediens.strIngredient2" >{{objIngrediens.strIngredient2}}</li>
+            <li class="list-item"*ngIf="objIngrediens.strIngredient3" >{{objIngrediens.strIngredient3}}</li>
+            <li class="list-item"*ngIf="objIngrediens.strIngredient4" >{{objIngrediens.strIngredient4}}</li>
+            <li class="list-item"*ngIf="objIngrediens.strIngredient5" >{{objIngrediens.strIngredient5}}</li>
+            <li class="list-item"*ngIf="objIngrediens.strIngredient6" >{{objIngrediens.strIngredient6}}</li>
+            <li class="list-item"*ngIf="objIngrediens.strIngredient7" >{{objIngrediens.strIngredient7}}</li>
+            <li class="list-item"*ngIf="objIngrediens.strIngredient8" >{{objIngrediens.strIngredient8}}</li>
+            <li class="list-item"*ngIf="objIngrediens.strIngredient9" >{{objIngrediens.strIngredient9}}</li>
+            <li class="list-item"*ngIf="objIngrediens.strIngredient10" >{{objIngrediens.strIngredient10}}</li>
+            <li class="list-item"*ngIf="objIngrediens.strIngredient12" >{{objIngrediens.strIngredient11}}</li>
+            <li class="list-item"*ngIf="objIngrediens.strIngredient13" >{{objIngrediens.strIngredient12}}</li>
+            <li class="list-item"*ngIf="objIngrediens.strIngredient14" >{{objIngrediens.strIngredient13}}</li>
+            <li class="list-item"*ngIf="objIngrediens.strIngredient15" >{{objIngrediens.strIngredient14}}</li>
+            <li class="list-item"*ngIf="objIngrediens.strIngredient16" >{{objIngrediens.strIngredient15}}</li>
+            <li class="list-item"*ngIf="objIngrediens.strIngredient17" >{{objIngrediens.strIngredient16}}</li>
+            <li class="list-item"*ngIf="objIngrediens.strIngredient18" >{{objIngrediens.strIngredient17}}</li>
+           
+        </ul>
+        <h1 class="title-instructions">ISTRUZIONI</h1>
+        <p *ngIf="objIngrediens.strIngredient1">{{objIngrediens.strInstructionsIT}}</p>
+      </div>
+    </div>
+      
+</div>

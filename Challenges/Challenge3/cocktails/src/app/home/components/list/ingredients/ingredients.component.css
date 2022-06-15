@@ -1,0 +1,102 @@
+/* Global reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* overlay element */
+.overlay{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    width: 100%;
+    height: 100%;
+   background-color: rgba(0, 0, 0, 0.6);
+      
+   
+}
+
+
+/* modal box review element */
+.modal-box{
+    width: 45%;
+    height: 45%;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+}
+
+.content-modal-box{ 
+    display: flex;
+    
+    flex-direction: column;
+    padding: 3rem;
+}
+
+.close-btn{
+    font-weight: 600;
+    position: absolute;
+    font-size: 30px;
+    right: 25px;
+    top: 20px;
+    cursor: pointer;
+}
+
+.container-img{
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: 50%;
+  position: absolute;
+      right: 116px;
+    top: 50px;
+}
+
+.img-ingr{
+width: 100%;
+height: 100%;
+}
+
+.container-list-item{
+    margin-bottom: 3rem!important;
+}
+
+.list-item{
+    position:relative;
+    left: 20px;
+}
+.title-instructions{
+  margin-top: 3rem;
+}
+
+/* Media query */
+@media only screen and (max-width: 1300px) {
+  .modal-box {
+   width: 60%;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .modal-box {
+   width: 80%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .modal-box {
+   width: 80%;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .modal-box {
+   width: 90%;
+  }
+}
+
+
+

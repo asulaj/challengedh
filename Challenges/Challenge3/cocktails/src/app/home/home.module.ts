@@ -5,6 +5,7 @@ import { ListComponent } from './components/list/list.component';
 import { ReviewComponent } from './components/list/review/review.component';
 import { HelloComponent } from './components/hello/hello.component';
 import {FormsModule} from '@angular/forms';
+import { IngredientsComponent } from './components/list/ingredients/ingredients.component';
 
 
 
@@ -14,7 +15,8 @@ import {FormsModule} from '@angular/forms';
     HeroComponent,
     ListComponent,
     ReviewComponent,
-    HelloComponent
+    HelloComponent,
+    IngredientsComponent
   ],
   imports: [
     CommonModule,

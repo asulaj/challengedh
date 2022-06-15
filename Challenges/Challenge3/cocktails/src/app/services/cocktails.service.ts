@@ -16,6 +16,8 @@ export class CocktailsService {
   public favouriteList$ = new BehaviorSubject([]);
 
 
+  private modalBoxIngredients: boolean = false;
+  public ingredients$ = new BehaviorSubject<boolean>(false);
 
   constructor(private api: ApiCocktailsService) { }
   // get appi from server passing a value desired from input by user
@@ -59,5 +61,13 @@ export class CocktailsService {
 
   }
 
+
+  toggleModalBoxIngrediens(): any {
+
+    this.modalBoxIngredients = !this.modalBoxIngredients;
+    this.ingredients$.next(this.modalBoxIngredients)
+    return this.ingredients$.asObservable();
+
+  }
 
 }

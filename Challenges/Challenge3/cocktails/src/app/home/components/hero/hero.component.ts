@@ -20,12 +20,11 @@ export class HeroComponent implements OnInit {
 
   getDrinks(event: any) {
     let keySearch: string = event.value;
-    console.log(event.value)
+
 
 
     this.cocktailsService.getCocktailsList(keySearch).subscribe(
       (response: any) => {
-
         // Before displaying items set and check if they are in the favourite list, so the heart svg will be colored
         let listStted = this.cocktailsService.setAndCheckObjIsinFavouriteList(response.drinks)
         this.cocktailList.emit(listStted)

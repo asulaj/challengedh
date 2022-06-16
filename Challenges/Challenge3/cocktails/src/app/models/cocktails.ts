@@ -25,5 +25,5 @@ export interface ICocktail {
     strIngredient14?: string;
     strIngredient15?: string;
     favourite?: boolean;
-    totStars?: number;
+    totStars?: number[];
 }

@@ -9,7 +9,7 @@ import { CocktailsService } from 'src/app/services/cocktails.service';
 })
 export class ReviewComponent implements OnInit {
 
-
+  
 
 
   @Input() objaddTofavouriteList: any = {} // container will take obj setted by property boolean and number
@@ -72,11 +72,17 @@ export class ReviewComponent implements OnInit {
 
   selectStars(numStars: number): void {
     this.objaddTofavouriteList.favourite = true; // create and  set property favourite
+<<<<<<< HEAD
     this.objaddTofavouriteList.totStars = numStars; // create and set property totStars
 
+=======
+    this.objaddTofavouriteList.totStars = Array(numStars).fill(numStars).map(x => x); // create and set property totStars
+>>>>>>> e4a62716828f7de38fac4f181f514374ec015e61
     this.cocktailService.addToFavouriteList(this.objaddTofavouriteList) //add to favourite list
-    this.addTo = true;
-
+    this.addTo = true;          
+    
+    
+    
     this.closeReview(false); // close modal box review
   }
 

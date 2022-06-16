@@ -42,7 +42,7 @@ h2{
 }
 
 .card-container{
-    width: 280px;
+    width: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,12 +50,17 @@ h2{
     border: none;
     box-shadow: 2px 10px 2px rgba(141, 115, 115,0.3);
     cursor: pointer;
-    
+    font-size: 18px;
 }
 
 .card-container:hover{
     margin-top: -10px;
     transition: 400ms;
+}
+
+.cocktail-name{
+    font-weight: 600;
+    font-size: 20x;
 }
 
 .button-delete{
@@ -72,6 +77,7 @@ h2{
     color: white;
 }
 
+<<<<<<< HEAD
 /*Reviews*/
 .container-review{
     display: flex;
@@ -92,3 +98,16 @@ h2{
 .backGroundReview{
     background-color: green;
 }
+=======
+.stars{
+    display: flex;
+    gap: 5px;
+}
+
+.stars svg{
+    fill: yellow;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+>>>>>>> e4a62716828f7de38fac4f181f514374ec015e61

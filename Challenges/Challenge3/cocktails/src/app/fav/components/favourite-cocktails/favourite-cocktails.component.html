@@ -1,12 +1,13 @@
 <div class="main-container" *ngIf="myFavoriteCocktails.length > 0; else noFavoriteCocktail">
   <div class="cards-container">
-    <div class="card-container" *ngFor="let cocktail of myFavoriteCocktails">
+    <div (click)="onClick(cocktail)" class="card-container" *ngFor="let cocktail of myFavoriteCocktails">
       <div>
         <img src="{{ cocktail.strDrinkThumb }}" alt="" width="280px">
       </div>
-      <div>
+      <div class="cocktail-name">
         <p>{{cocktail.strDrink}}</p>
       </div>
+<<<<<<< HEAD
      
         
      <div  class="container-review" >
@@ -19,11 +20,30 @@
      </div>
 
       
+=======
+      <div class="stars">             
+        <div *ngFor="let x of cocktail.totStars" >                  
+          <svg data-star="3" viewBox="0 0 24 24" stroke="#FFB237" color="#FFB237" width="20px"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M13.8382 2.20573L16.12 6.82916L21.2222 7.57057C22.9037 7.81489 23.5751 9.88123 22.3584 11.0672L18.6663 14.6661L19.5379 19.7477C19.8251 21.4224 18.0674 22.6995 16.5635 21.9088L11.9998 19.5096L7.43624 21.9088C5.93232 22.6995 4.17457 21.4224 4.4618 19.7477L5.33337 14.6661L1.64134 11.0672C0.424631 9.88125 1.09601 7.8149 2.77747 7.57057L7.87974 6.82916L10.1615 2.20573C10.9135 0.682081 13.0862 0.682068 13.8382 2.20573Z">
+            </path>
+          </svg>
+        </div>
+      </div>
+      <div>
+        <p>{{ cocktail.strInstructions }}</p>
+      </div>
+>>>>>>> e4a62716828f7de38fac4f181f514374ec015e61
       <div class="button-delete">
         <button type="button" (click)="deleteItem(cocktail)">Delete</button>
       </div>
     </div>
   </div>
+</div>
+<div>
+  <app-modal-ingredients (modalEmitted)="closeModal($event)" [myFavouriteCocktail]="myFavouriteCocktail"
+    *ngIf="modalBoxIngre"></app-modal-ingredients>
 </div>
 
 
@@ -35,7 +55,3 @@
     <button [routerLink]="''">Vai alla Home Page e cerca un cocktail</button>
   </div>
 </ng-template>
-
-
-
-

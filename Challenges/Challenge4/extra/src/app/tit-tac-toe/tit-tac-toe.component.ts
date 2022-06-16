@@ -29,7 +29,7 @@ export class TitTacToeComponent implements OnInit {
       }
     )
     
-     this.prova.tryApi().subscribe(
+     this.api.tryApi().subscribe(
       (data:any) => {
         console.log(data);
       }

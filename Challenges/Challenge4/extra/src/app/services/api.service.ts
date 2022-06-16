@@ -15,6 +15,6 @@ export class ApiService {
   }
 
   tryApi(): Observable<any> {
-    return this.http.get("http://localhost:5000/user");
+    return this.http.get("http://localhost:5000/messages/messagesdm");
   }
 }

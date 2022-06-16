@@ -2,7 +2,6 @@ import { Node } from '@angular/compiler';
 import { Component, OnInit, ViewChild, ViewChildren, ɵsetAllowDuplicateNgModuleIdsForTest } from '@angular/core';
 import { NodeStyleEventEmitter } from 'rxjs/internal/observable/fromEvent';
 import { ApiService } from '../services/api.service';
-import { ProvaService } from '../prova.service';
 @Component({
   selector: 'app-tit-tac-toe',
   templateUrl: './tit-tac-toe.component.html',
@@ -11,30 +10,54 @@ import { ProvaService } from '../prova.service';
 export class TitTacToeComponent implements OnInit {
 
   public commentList: any = [];
+  public messagesDuringMatch: any =[];
+  public messagesAfterLoss: any =[];
+  public messagesAfterDraw: any =[];
+  public bobMessage!: string; 
   randomComment(): string {
-    console.log(this.commentList)
-    return this.commentList.sort(() => Math.random() - 0.5)[0].comment
+    return this.messagesDuringMatch.sort(() => Math.random() - 0.5)[0].comment;
   }
 
+  // random comment after a loss
+  randomCommentL(): string {
+    return this.messagesAfterLoss.sort(() => Math.random() - 0.5)[0].comment;
+  }
+  // random comment after a draw
+  randomCommentD(): string {
+    return this.messagesAfterDraw.sort(() => Math.random() - 0.5)[0].comment;
+  }
 
-  constructor(private api: ApiService, private prova: ProvaService) {
+  constructor(private api: ApiService) {
   }
   public disableClick: boolean = false;  // disable or able the click event
 
   ngOnInit(): void {
-    this.api.getMatchComments().subscribe(
-      (data: any) => {
-        data.sort(() => Math.random() - 0.5)
-        this.commentList = data;
-      }
-    )
+  //  this.api.getMatchComments().subscribe(
+  //    (data: any) => {
+  //      data.sort(() => Math.random() - 0.5)
+  //      this.commentList = data;
+  //    }
+ //   )
     
-     this.api.tryApi().subscribe(
+     this.api.apiDuringMatch().subscribe(
       (data:any) => {
-        console.log(data);
+        this.messagesDuringMatch = data;
+        console.log(this.messagesDuringMatch);
       }
      ) 
-
+     this.api.apiAfterDraw().subscribe(
+      (data:any) => { 
+        this.messagesAfterDraw = data;
+        console.log(this.messagesAfterDraw);
+      }
+     )
+     this.api.apiAfterLoss().subscribe(
+      (data:any)=>{
+        this.messagesAfterLoss = data;
+        console.log(this.messagesAfterLoss);
+      }
+     )
+      
 
     this.startGame()
   }
@@ -84,7 +107,7 @@ export class TitTacToeComponent implements OnInit {
       if (!this.checkTie()) {// this means that every square is full and nobody has won yet
 
         setTimeout(() => {
-          alert(this.randomComment());
+          this.bobMessage= this.randomComment();
           this.turn(this.bestSpot(), this.aiPlayer)
         }, 300)
       }
@@ -131,7 +154,7 @@ export class TitTacToeComponent implements OnInit {
     this.disableClick = true;
 
     setTimeout(() => {
-      alert('Come rubare le caramelle ad un bambino!')
+      this.bobMessage= this.randomCommentL();
     }, 500)
 
   }
@@ -150,7 +173,7 @@ export class TitTacToeComponent implements OnInit {
   }
 
   bestSpot() {
-
+    
     return this.minimax(this.origBoard, this.aiPlayer).index;
   }
 
@@ -166,8 +189,8 @@ export class TitTacToeComponent implements OnInit {
       this.declareWinner("Tie Game!")
 
       setTimeout(() => {
-        alert('pareggioooo')
-      }, 500)
+        this.bobMessage= this.randomCommentD();
+      }, 300)
       return true;
     }
 

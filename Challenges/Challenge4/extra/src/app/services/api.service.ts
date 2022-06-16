@@ -8,13 +8,14 @@ import { Observable } from 'rxjs';
 export class ApiService {
 
   constructor(private http: HttpClient) { }
-  public duringMatchPath: string = '../../assets/during-match.json';
 
-  getMatchComments(): Observable<any> {
-    return this.http.get(this.duringMatchPath)
+  apiDuringMatch(): Observable<any> {
+    return this.http.get("http://localhost:5000/messages/messagesduringmatch");
   }
-
-  tryApi(): Observable<any> {
-    return this.http.get("http://localhost:5000/messages/messagesdm");
+  apiAfterLoss(): Observable<any> {
+    return this.http.get("http://localhost:5000/messages/messageslost")
+  }
+  apiAfterDraw(): Observable<any> {
+    return this.http.get("http://localhost:5000/messages/messagesdraw")
   }
 }

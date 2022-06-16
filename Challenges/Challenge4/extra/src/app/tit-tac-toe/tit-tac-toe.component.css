@@ -18,11 +18,12 @@ td{
 
 table{
     border-collapse: collapse;
-    position: absolute;
+    /* position: absolute;
     left: 50%;
     margin-left: -155px;
-    top: 50px;
-
+    top: 50px; */
+    width: 25vw;
+    height: 25vh;
 }
 
 table tr:first-child td{
@@ -45,7 +46,7 @@ table tr td:last-child{
     display: none;
     border: 1px solid black;
     width: 200px;
-    top: 120px;
+    top: 450px;
     background-color: rgba(205, 133, 63, 0.8);
     position: absolute;
     left: 50%;
@@ -60,4 +61,39 @@ table tr td:last-child{
 
 button{
     cursor: pointer;
+}
+.text-container p{ 
+    font-size: 25px;
+    text-align: center;
+}
+h2{ 
+    text-align: center;
+}
+.container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+button{
+    height: 80px;
+    width: 150px;
+    font-size: 40px;
+   background-color:#79e700;
+}
+
+#a{
+    color: red;
+}
+
+.bob{
+    font-size: 24px;
+    text-align: center;
+}
+@media (max-width: 1100px) {
+    td{
+        font-size:50px;
+    }
 }

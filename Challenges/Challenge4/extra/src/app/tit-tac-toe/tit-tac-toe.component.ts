@@ -81,7 +81,7 @@ export class TitTacToeComponent implements OnInit {
     if (typeof this.origBoard[(square.target as HTMLElement).id] === 'number') {
       this.turn((square.target as HTMLElement).id, this.huPlayer) // this funcion can be called by human player or AI player
       //Before aiPlayer takes turn we need to check if it is tie
-      if (!this.checkTie()) {// tie means that every square is full and nobody has won yet
+      if (!this.checkTie()) {// this means that every square is full and nobody has won yet
 
         setTimeout(() => {
           alert(this.randomComment());
@@ -164,8 +164,13 @@ export class TitTacToeComponent implements OnInit {
       }
 
       this.declareWinner("Tie Game!")
+
+      setTimeout(() => {
+        alert('pareggioooo')
+      }, 500)
       return true;
     }
+
     return false;
   }
 

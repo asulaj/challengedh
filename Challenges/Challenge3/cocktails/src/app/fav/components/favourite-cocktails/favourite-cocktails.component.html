@@ -7,6 +7,20 @@
       <div class="cocktail-name">
         <p>{{cocktail.strDrink}}</p>
       </div>
+<<<<<<< HEAD
+     
+        
+     <div  class="container-review" >
+    
+      <div class="item {{reviews(cocktail.totStars)}}"></div>
+      <div class="item"></div> 
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+     </div>
+
+      
+=======
       <div class="stars">             
         <div *ngFor="let x of cocktail.totStars" >                  
           <svg data-star="3" viewBox="0 0 24 24" stroke="#FFB237" color="#FFB237" width="20px"
@@ -20,6 +34,7 @@
       <div>
         <p>{{ cocktail.strInstructions }}</p>
       </div>
+>>>>>>> e4a62716828f7de38fac4f181f514374ec015e61
       <div class="button-delete">
         <button type="button" (click)="deleteItem(cocktail)">Delete</button>
       </div>

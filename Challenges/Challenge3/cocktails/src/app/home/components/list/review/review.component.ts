@@ -72,7 +72,12 @@ export class ReviewComponent implements OnInit {
 
   selectStars(numStars: number): void {
     this.objaddTofavouriteList.favourite = true; // create and  set property favourite
+<<<<<<< HEAD
+    this.objaddTofavouriteList.totStars = numStars; // create and set property totStars
+
+=======
     this.objaddTofavouriteList.totStars = Array(numStars).fill(numStars).map(x => x); // create and set property totStars
+>>>>>>> e4a62716828f7de38fac4f181f514374ec015e61
     this.cocktailService.addToFavouriteList(this.objaddTofavouriteList) //add to favourite list
     this.addTo = true;          
     

@@ -77,6 +77,28 @@ h2{
     color: white;
 }
 
+<<<<<<< HEAD
+/*Reviews*/
+.container-review{
+    display: flex;
+    gap: .3rem;
+}
+
+.item{
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid green;
+}
+
+
+
+
+.backGroundReview{
+    background-color: green;
+}
+=======
 .stars{
     display: flex;
     gap: 5px;
@@ -88,3 +110,4 @@ h2{
     margin-bottom: 10px;
 }
 
+>>>>>>> e4a62716828f7de38fac4f181f514374ec015e61

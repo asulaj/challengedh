@@ -5,7 +5,9 @@ export interface ICocktail{
     strIBA: string;
     strCategory: string;
     strDrinkThumb: string;
+    strInstructions: string;
     strInstructionsEn: string;
+    strInstructionsIt: string;
     stars?: number;
     strIngredient1?: string;
     strIngredient2?: string;
@@ -22,4 +24,5 @@ export interface ICocktail{
     strIngredient13?: string;
     strIngredient14?: string;
     strIngredient15?: string;
+    totStars: number
 }

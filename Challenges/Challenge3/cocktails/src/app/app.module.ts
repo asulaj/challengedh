@@ -10,13 +10,15 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { FavModule } from './fav/fav.module';
 import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
+import { DescriptionPipe } from './description.pipe';
 
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DescriptionPipe
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,7 @@ import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
     HttpClientModule,
     FavModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,    
   ],
   exports:[
     FormsModule,

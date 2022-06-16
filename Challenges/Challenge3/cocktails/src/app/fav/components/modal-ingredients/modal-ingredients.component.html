@@ -1,0 +1,49 @@
+<div *ngIf="modalBoxIngre" class="overlay">
+    <div class="modal-box">
+      <div class="content-modal-box">
+        <div class="button-close">
+            <p (click)="close()"><strong>X</strong></p>
+        </div>
+        <div class="content-cocktail-detail">
+            <div>
+                <div>
+                    <img src="{{ myFavouriteCocktail.strDrinkThumb }}" alt="" width="150px">
+                </div>
+                <div>
+                    <p>{{ myFavouriteCocktail.strDrink }}</p>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <h2>INGREDIENTI</h2>
+                    <ul class="container-list-items">
+                        <li class="list-item"*ngIf="myFavouriteCocktail.strIngredient1" >{{myFavouriteCocktail.strIngredient1}}</li>
+                        <li class="list-item"*ngIf="myFavouriteCocktail.strIngredient2" >{{myFavouriteCocktail.strIngredient2}}</li>
+                        <li class="list-item"*ngIf="myFavouriteCocktail.strIngredient3" >{{myFavouriteCocktail.strIngredient3}}</li>
+                        <li class="list-item"*ngIf="myFavouriteCocktail.strIngredient4" >{{myFavouriteCocktail.strIngredient4}}</li>
+                        <li class="list-item"*ngIf="myFavouriteCocktail.strIngredient5" >{{myFavouriteCocktail.strIngredient5}}</li>
+                        <li class="list-item"*ngIf="myFavouriteCocktail.strIngredient6" >{{myFavouriteCocktail.strIngredient6}}</li>
+                        <li class="list-item"*ngIf="myFavouriteCocktail.strIngredient7" >{{myFavouriteCocktail.strIngredient7}}</li>
+                        <li class="list-item"*ngIf="myFavouriteCocktail.strIngredient8" >{{myFavouriteCocktail.strIngredient8}}</li>
+                        <li class="list-item"*ngIf="myFavouriteCocktail.strIngredient9" >{{myFavouriteCocktail.strIngredient9}}</li>
+                        <li class="list-item"*ngIf="myFavouriteCocktail.strIngredient10" >{{myFavouriteCocktail.strIngredient10}}</li>
+                        <li class="list-item"*ngIf="myFavouriteCocktail.strIngredient12" >{{myFavouriteCocktail.strIngredient11}}</li>
+                        <li class="list-item"*ngIf="myFavouriteCocktail.strIngredient13" >{{myFavouriteCocktail.strIngredient12}}</li>
+                        <li class="list-item"*ngIf="myFavouriteCocktail.strIngredient14" >{{myFavouriteCocktail.strIngredient13}}</li>
+                        <li class="list-item"*ngIf="myFavouriteCocktail.strIngredient15" >{{myFavouriteCocktail.strIngredient14}}</li>
+                        <li class="list-item"*ngIf="myFavouriteCocktail.strIngredient16" >{{myFavouriteCocktail.strIngredient15}}</li>
+                        <li class="list-item"*ngIf="myFavouriteCocktail.strIngredient17" >{{myFavouriteCocktail.strIngredient16}}</li>
+                        <li class="list-item"*ngIf="myFavouriteCocktail.strIngredient18" >{{myFavouriteCocktail.strIngredient17}}</li>
+                       
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="title-instructions">ISTRUZIONI</h2>
+        <p *ngIf="myFavouriteCocktail.strIngredient1">{{myFavouriteCocktail.strInstructionsIT}}</p>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+      
+</div>

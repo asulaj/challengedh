@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CocktailsService } from 'src/app/services/cocktails.service';
 import { ICocktail } from '../../../models/cocktails';
-import { map } from 'rxjs'
+import { from, map } from 'rxjs';
+
 
 @Component({
   selector: 'app-favourite-cocktails',
@@ -11,6 +12,10 @@ import { map } from 'rxjs'
 export class FavouriteCocktailsComponent implements OnInit {
   myFavoriteCocktails: ICocktail[] = [];
   arrayN: Array<number> = [];
+  public modalBoxIngre: boolean = false;
+  public myFavouriteCocktail: any;
+
+  
 
   constructor(private cocktailService: CocktailsService) {
  
@@ -20,12 +25,12 @@ export class FavouriteCocktailsComponent implements OnInit {
    this.cocktailService.getFavouriteCocktails().pipe(
     map((response: any) => {
       for (let x of response){
-        this.myFavoriteCocktails.push(x);        
+        this.myFavoriteCocktails.push(x);                  
       }      
     })
    )
    .subscribe()
-    console.log(this.myFavoriteCocktails);
+   
 
     this.cocktailService.getFavouriteCocktails().pipe(
       map((response: any)=> {
@@ -34,14 +39,24 @@ export class FavouriteCocktailsComponent implements OnInit {
        }
       })
     ).subscribe()
-    console.log(this.arrayN)
+     
   
   };
+
+  onClick(c: ICocktail){
+    this.myFavouriteCocktail = c
+    this.modalBoxIngre = true;
+    console.log(this.myFavouriteCocktail)
+  }
 
   deleteItem(x: ICocktail){
     const index = this.myFavoriteCocktails.indexOf(x)
     this.myFavoriteCocktails.splice(index, 1) 
   }
+
+
+
+  
 
   
 

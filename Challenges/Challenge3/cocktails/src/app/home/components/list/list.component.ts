@@ -9,7 +9,7 @@ import { CocktailsService } from 'src/app/services/cocktails.service';
 })
 export class ListComponent implements OnInit {
 
-  public modalBoxIngre: boolean = false;;
+  public modalBoxIngre: boolean = false;
 
   public ingrediensParent: any;
 

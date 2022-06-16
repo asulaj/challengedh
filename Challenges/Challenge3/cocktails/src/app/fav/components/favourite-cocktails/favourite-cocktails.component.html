@@ -1,8 +1,29 @@
-
-<div #noFavoriteCocktail>
-    <div class="no-favorite-cocktail">
-        <h2>Nessun Cocktail selezionato</h2>
-        <img src="https://www.emojiall.com/images/60/skype/1f937-200d-2642-fe0f.png" alt="no-favorite-cocktail">
-        <button [routerLink]="''">Vai alla Home Page e cerca un cocktail</button>
+<div class="main-container" *ngIf="myFavoriteCocktails.length > 0; else noFavoriteCocktail">
+  <div class="cards-container">
+    <div class="card-container" *ngFor="let cocktail of myFavoriteCocktails">
+      <div>
+        <img src="{{ cocktail.strDrinkThumb }}" alt="" width="280px">
+      </div>
+      <div>
+        <p>{{cocktail.strDrink}}</p>
+      </div>
+      <div *ngFor="let x of arrayN">
+        
+          
+      </div>
+      <div class="button-delete">
+        <button type="button" (click)="deleteItem(cocktail)">Delete</button>
+      </div>
     </div>
+  </div>
 </div>
+
+
+
+<ng-template #noFavoriteCocktail>
+  <div class="no-favorite-cocktail">
+    <h2>Nessun Cocktail selezionato</h2>
+    <img src="https://www.emojiall.com/images/60/skype/1f937-200d-2642-fe0f.png" alt="no-favorite-cocktail">
+    <button [routerLink]="''">Vai alla Home Page e cerca un cocktail</button>
+  </div>
+</ng-template>

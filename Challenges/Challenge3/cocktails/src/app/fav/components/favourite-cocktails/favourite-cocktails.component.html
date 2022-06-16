@@ -7,10 +7,18 @@
       <div>
         <p>{{cocktail.strDrink}}</p>
       </div>
-      <div *ngFor="let x of arrayN">
+     
         
-          
-      </div>
+     <div  class="container-review" >
+    
+      <div class="item {{reviews(cocktail.totStars)}}"></div>
+      <div class="item"></div> 
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+     </div>
+
+      
       <div class="button-delete">
         <button type="button" (click)="deleteItem(cocktail)">Delete</button>
       </div>

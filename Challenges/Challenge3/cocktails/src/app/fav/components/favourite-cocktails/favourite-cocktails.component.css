@@ -71,3 +71,24 @@ h2{
     font-size: 18px;
     color: white;
 }
+
+/*Reviews*/
+.container-review{
+    display: flex;
+    gap: .3rem;
+}
+
+.item{
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid green;
+}
+
+
+
+
+.backGroundReview{
+    background-color: green;
+}

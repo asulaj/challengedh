@@ -12,12 +12,15 @@ export class TitTacToeComponent implements OnInit {
 
   public commentList: any = [];
   randomComment(): string {
-    return this.commentList.sort(() => Math.random() - 0.5).pop().comment
+    console.log(this.commentList)
+    return this.commentList.sort(() => Math.random() - 0.5)[0].comment
   }
+
 
   constructor(private api: ApiService, private prova: ProvaService) {
-
   }
+  public disableClick: boolean = false;  // disable or able the click event
+
   ngOnInit(): void {
     this.api.getMatchComments().subscribe(
       (data: any) => {
@@ -58,6 +61,7 @@ export class TitTacToeComponent implements OnInit {
 
 
   startGame(): void {// it starts ad the beginning when the component is loaded or when you user press button Replay
+    this.disableClick = false;
     this.cells = document.querySelectorAll('.cell') as NodeListOf<any>;
     let el = document.querySelector('.endgame') as HTMLElement | null;
     el!.style.display = 'none';
@@ -77,7 +81,7 @@ export class TitTacToeComponent implements OnInit {
     if (typeof this.origBoard[(square.target as HTMLElement).id] === 'number') {
       this.turn((square.target as HTMLElement).id, this.huPlayer) // this funcion can be called by human player or AI player
       //Before aiPlayer takes turn we need to check if it is tie
-      if (!this.checkTie()) {// tie measn that every square is full and nobody has won yet
+      if (!this.checkTie()) {// tie means that every square is full and nobody has won yet
 
         setTimeout(() => {
           alert(this.randomComment());
@@ -109,7 +113,7 @@ export class TitTacToeComponent implements OnInit {
     //We need to check if the the game is won
     for (let [index, win] of this.winCombos.entries()) {
       if (win.every((elem: any) => plays.indexOf(elem) > -1)) {// has the player played in every spots that counts as a win for that win 
-        console.log(plays);
+        // console.log(plays);
         gameWon = { index: index, player: player } // example {index: 1; player: 'O'}
 
         break;
@@ -123,7 +127,9 @@ export class TitTacToeComponent implements OnInit {
       (document.getElementById(index) as HTMLElement | null)!.style.backgroundColor =
         gameWon.player == this.huPlayer ? 'blue' : 'red';
     }
-    this.declareWinner(gameWon.player === this.huPlayer ? "You win!" : "You lose.")
+    this.declareWinner(gameWon.player === this.huPlayer ? "You win!" : "You lose.");
+    this.disableClick = true;
+
     setTimeout(() => {
       alert('Come rubare le caramelle ad un bambino!')
     }, 500)
@@ -144,16 +150,19 @@ export class TitTacToeComponent implements OnInit {
   }
 
   bestSpot() {
+
     return this.minimax(this.origBoard, this.aiPlayer).index;
   }
 
-  // check empty spot and therefor if it is tie
+  // check empty spot and therefore if it is tie
   checkTie() {
     if (this.emptySquares().length === 0) {
       for (var i = 0; i < this.cells.length; i++) {
         this.cells[i].style.backgroundColor = "green";
         // this.cells[i].removeEventListener('click', turnClick, false);
+        this.disableClick = true;
       }
+
       this.declareWinner("Tie Game!")
       return true;
     }
@@ -173,14 +182,14 @@ export class TitTacToeComponent implements OnInit {
       return { score: 0 };
     }
     let moves = [];
-    for (var i = 0; i < availSpots.length; i++) {
+    for (let i = 0; i < availSpots.length; i++) {
       let move: any = {};
 
       move.index = newBoard[availSpots[i]];
       newBoard[availSpots[i]] = player;
 
       if (player === this.aiPlayer) {
-        var result = this.minimax(newBoard, this.huPlayer);
+        let result = this.minimax(newBoard, this.huPlayer);
         move.score = result.score;
       } else {
         var result = this.minimax(newBoard, this.aiPlayer);
@@ -195,7 +204,7 @@ export class TitTacToeComponent implements OnInit {
     let bestMove: any;
     if (player === this.aiPlayer) {
       let bestScore = -10000;
-      for (var i = 0; i < moves.length; i++) {
+      for (let i = 0; i < moves.length; i++) {
         if (moves[i].score > bestScore) {
           bestScore = moves[i].score;
           bestMove = i;
@@ -203,7 +212,7 @@ export class TitTacToeComponent implements OnInit {
       }
     } else {
       let bestScore = 10000;
-      for (var i = 0; i < moves.length; i++) {
+      for (let i = 0; i < moves.length; i++) {
         if (moves[i].score < bestScore) {
           bestScore = moves[i].score;
           bestMove = i;

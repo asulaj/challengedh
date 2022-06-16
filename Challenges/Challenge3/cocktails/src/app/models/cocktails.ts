@@ -1,11 +1,13 @@
-export interface ICocktail{
+export interface ICocktail {
     idDrink: number;
     strAlcoholic: string;
     strDrink: string;
     strIBA: string;
     strCategory: string;
     strDrinkThumb: string;
+    strInstructions: string;
     strInstructionsEn: string;
+    strInstructionsIt: string;
     stars?: number;
     strIngredient1?: string;
     strIngredient2?: string;
@@ -22,4 +24,6 @@ export interface ICocktail{
     strIngredient13?: string;
     strIngredient14?: string;
     strIngredient15?: string;
+    favourite?: boolean;
+    totStars?: number;
 }

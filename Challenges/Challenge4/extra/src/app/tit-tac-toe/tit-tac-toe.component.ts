@@ -1,6 +1,6 @@
-import { Node } from '@angular/compiler';
-import { Component, OnInit, ViewChild, ViewChildren, ɵsetAllowDuplicateNgModuleIdsForTest } from '@angular/core';
-import { NodeStyleEventEmitter } from 'rxjs/internal/observable/fromEvent';
+
+import { Component, OnInit } from '@angular/core';
+
 import { ApiService } from '../services/api.service';
 @Component({
   selector: 'app-tit-tac-toe',

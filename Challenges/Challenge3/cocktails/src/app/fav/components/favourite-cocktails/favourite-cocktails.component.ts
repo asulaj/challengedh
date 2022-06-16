@@ -18,10 +18,11 @@ export class FavouriteCocktailsComponent implements OnInit {
   
 
   constructor(private cocktailService: CocktailsService) {
- 
-   }
+
+  }
 
   ngOnInit(): void {
+
    this.cocktailService.getFavouriteCocktails().pipe(
     map((response: any) => {
       for (let x of response){
@@ -31,12 +32,22 @@ export class FavouriteCocktailsComponent implements OnInit {
    )
    .subscribe()
    
+    this.cocktailService.getFavouriteCocktails().pipe(
+      map((response: any) => {
+        for (let x of response) {
+          this.myFavoriteCocktails.push({ ...x });
+        }
+      })
+    )
+      .subscribe()
+    console.log(this.myFavoriteCocktails);
+
 
     this.cocktailService.getFavouriteCocktails().pipe(
-      map((response: any)=> {
-       for(let x of response){
-        this.arrayN.push(x.totStars)
-       }
+      map((response: any) => {
+        for (let x of response) {
+          this.arrayN.push(x.totStars)
+        }
       })
     ).subscribe()
      
@@ -49,19 +60,16 @@ export class FavouriteCocktailsComponent implements OnInit {
     console.log(this.myFavouriteCocktail)
   }
 
-  deleteItem(x: ICocktail){
+
+  deleteItem(x: ICocktail) {
+
     const index = this.myFavoriteCocktails.indexOf(x)
-    this.myFavoriteCocktails.splice(index, 1) 
+    this.myFavoriteCocktails.splice(index, 1)
   }
 
 
 
-  
 
-  
 
-  
-
-  
 
 }

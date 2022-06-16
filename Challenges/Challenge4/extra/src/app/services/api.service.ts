@@ -13,4 +13,8 @@ export class ApiService {
   getMatchComments(): Observable<any> {
     return this.http.get(this.duringMatchPath)
   }
+
+  tryApi(): Observable<any> {
+    return this.http.get("http://localhost:5000/user");
+  }
 }

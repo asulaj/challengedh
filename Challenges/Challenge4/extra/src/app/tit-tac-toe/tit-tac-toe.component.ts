@@ -2,7 +2,7 @@ import { Node } from '@angular/compiler';
 import { Component, OnInit, ViewChild, ViewChildren, ɵsetAllowDuplicateNgModuleIdsForTest } from '@angular/core';
 import { NodeStyleEventEmitter } from 'rxjs/internal/observable/fromEvent';
 import { ApiService } from '../services/api.service';
-
+import { ProvaService } from '../prova.service';
 @Component({
   selector: 'app-tit-tac-toe',
   templateUrl: './tit-tac-toe.component.html',
@@ -16,11 +16,11 @@ export class TitTacToeComponent implements OnInit {
     return this.commentList.sort(() => Math.random() - 0.5)[0].comment
   }
 
+
+  constructor(private api: ApiService, private prova: ProvaService) {
+  }
   public disableClick: boolean = false;  // disable or able the click event
 
-  constructor(private api: ApiService) {
-
-  }
   ngOnInit(): void {
     this.api.getMatchComments().subscribe(
       (data: any) => {
@@ -28,6 +28,13 @@ export class TitTacToeComponent implements OnInit {
         this.commentList = data;
       }
     )
+    
+     this.prova.tryApi().subscribe(
+      (data:any) => {
+        console.log(data);
+      }
+     ) 
+
 
     this.startGame()
   }

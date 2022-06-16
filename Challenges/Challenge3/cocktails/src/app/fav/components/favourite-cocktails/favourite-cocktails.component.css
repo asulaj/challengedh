@@ -76,3 +76,13 @@ h2{
     font-size: 18px;
     color: white;
 }
+
+.stars{
+    display: flex;
+}
+
+.stars svg{
+    fill: yellow;
+    margin: 10px
+}
+

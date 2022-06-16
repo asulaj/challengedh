@@ -6,6 +6,7 @@ import { ApiCocktailsService } from './api-cocktails.service';
   providedIn: 'root'
 })
 export class CocktailsService {
+  numbers!: number[];
 
   /*Container of items coming from api to set and check */
   private cocktailList: any = []
@@ -67,6 +68,10 @@ export class CocktailsService {
     this.modalBoxIngredients = !this.modalBoxIngredients;
     this.ingredients$.next(this.modalBoxIngredients)
     return this.ingredients$.asObservable();
+
+  }
+
+  fill(c: number){
 
   }
 

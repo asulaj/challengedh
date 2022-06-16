@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CocktailsService } from 'src/app/services/cocktails.service';
 import { ICocktail } from '../../../models/cocktails';
-import { from, map } from 'rxjs';
+import { map } from 'rxjs';
 
 
 @Component({
@@ -14,11 +14,15 @@ export class FavouriteCocktailsComponent implements OnInit {
   arrayN: Array<number> = [];
   public modalBoxIngre: boolean = false;
   public myFavouriteCocktail: any;
+  body = document.querySelector('body');
+  num!: number[]
+ 
 
   
 
   constructor(private cocktailService: CocktailsService) {
-
+    this.num = this. cocktailService.numbers;
+    
   }
 
   ngOnInit(): void {
@@ -32,42 +36,53 @@ export class FavouriteCocktailsComponent implements OnInit {
    )
    .subscribe()
    
-    this.cocktailService.getFavouriteCocktails().pipe(
-      map((response: any) => {
-        for (let x of response) {
-          this.myFavoriteCocktails.push({ ...x });
-        }
-      })
-    )
-      .subscribe()
-    console.log(this.myFavoriteCocktails);
+    // this.cocktailService.getFavouriteCocktails().pipe(
+    //   map((response: any) => {
+    //     for (let x of response) {
+    //       this.myFavoriteCocktails.push({ ...x });
+    //     }
+    //   })
+    // )
+    //   .subscribe()
+    // console.log(this.myFavoriteCocktails);
 
 
     this.cocktailService.getFavouriteCocktails().pipe(
       map((response: any) => {
         for (let x of response) {
-          this.arrayN.push(x.totStars)
+          this.arrayN.push(x.totStars);
+          console.log(this.arrayN)
         }
       })
     ).subscribe()
      
-  
+    
   };
 
   onClick(c: ICocktail){
     this.myFavouriteCocktail = c
     this.modalBoxIngre = true;
-    console.log(this.myFavouriteCocktail)
+    
   }
 
 
   deleteItem(x: ICocktail) {
 
     const index = this.myFavoriteCocktails.indexOf(x)
-    this.myFavoriteCocktails.splice(index, 1)
+    this.myFavoriteCocktails.splice(index, 1);
+    this.cocktailService.removeFavouriteItem(x)
   }
 
+  closeModal(event: boolean){
+    this.modalBoxIngre = event
+  }
+  
+  
+  
 
+  
+
+  
 
 
 

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 
 @Component({
@@ -9,7 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ModalIngredientsComponent implements OnInit {
   @Input() modalBoxIngre: boolean = true;
   @Input() myFavouriteCocktail!: any;
-
+  @Output() modalEmitted = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
@@ -17,7 +17,8 @@ export class ModalIngredientsComponent implements OnInit {
   }
 
   close(){
-    this.modalBoxIngre = false
+    this.modalBoxIngre = false;
+    this.modalEmitted.emit(false)
   }
 
 }

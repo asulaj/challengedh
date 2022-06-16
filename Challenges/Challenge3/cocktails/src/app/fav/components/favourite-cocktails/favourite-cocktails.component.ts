@@ -38,6 +38,11 @@ export class FavouriteCocktailsComponent implements OnInit {
   
   };
 
+  deleteItem(x: ICocktail){
+    const index = this.myFavoriteCocktails.indexOf(x)
+    this.myFavoriteCocktails.splice(index, 1) 
+  }
+
   
 
   
